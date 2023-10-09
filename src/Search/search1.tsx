@@ -4,11 +4,9 @@ import { FlatList, Image, SafeAreaView, ScrollView, StyleSheet, Text, TextInput,
 import { height, width } from '../../defaultSize';
 import { containsKey, getAllKeys, getData, removeData, storeData } from '../../AsyncService';
 
-const Search1 = () => {
+const Search1 = ({ navigation }: any) => {
   const [text, setText] = useState('책 이름 검색');
   const [list, setList] = useState<any>([]);
-
-  console.log(getAllKeys);
 
   useEffect(() => {
     async function listCheck() {
@@ -44,12 +42,15 @@ const Search1 = () => {
           onChangeText={setText}
           onPressIn={() => setText('')}
           onSubmitEditing={async () => {
-            const newArr: any = list.concat([text]);
-            setList(newArr);
-            if (await containsKey('recentSearch')) {
-              await removeData('recentSearch')
+            if (text != '') {
+              const newArr: any = list.concat([text]);
+              setList(newArr);
+              if (await containsKey('recentSearch')) {
+                await removeData('recentSearch')
+              }
+              await storeData('recentSearch', list)
             }
-            await storeData('recentSearch', list)
+            navigation.navigate("Search2", { text: text });
             setText('책 이름 검색')
           }}
           inputMode='text' />
