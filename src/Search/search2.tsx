@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, FlatList, Image, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 import axios from 'axios';
-import { ActivityIndicator, FlatList, Image, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+
 import { height, width } from '../../defaultSize';
 import { containsKey, removeData, storeData } from '../../AsyncService';
-import BookRecord from '../Record/bookRecord';
 
 export const getBookData = async (text: string) => {
   const clientId = `qO6ng3fS5wE3VrhWt4LS`
@@ -64,8 +64,11 @@ const Search2 = ({ route, navigation }: any) => {
       <View>
         <Image style={{ width: 100, height: 100, borderRadius: 8 }} source={{ uri: image ? image : "https://img.freepik.com/premium-vector/system-software-update-upgrade-concept-loading-process-screen-vector-illustration_175838-2182.jpg?w=2000" }} />
       </View>
-      <View>
-        <Text style={styles.name}>{title}</Text>
+      <View style={{
+        width: "70%"
+      }}>
+        <Text style={styles.name} numberOfLines={1}
+          ellipsizeMode='tail'>{title}</Text>
         <Text style={styles.element}>{author}</Text>
         <Text style={styles.company}>{publisher}</Text>
       </View>

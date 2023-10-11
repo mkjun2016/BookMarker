@@ -16,15 +16,17 @@ import Search2 from './src/Search/search2';
 import Settings from './src/Home/setting';
 import BookRecord from './src/Record/bookRecord';
 import BookList from './src/Record/bookList';
+import SuggestBook from './src/Home/suggestBook';
 
 const Stack = createStackNavigator();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName='Search1'
+    <Stack.Navigator initialRouteName='SuggestBook'
       screenOptions={{
         headerShown: false,
       }}>
+      <Stack.Screen name="SuggestBook" component={SuggestBook} />
       <Stack.Screen name="Search1" component={Search1} />
       <Stack.Screen name="Search2" component={Search2} />
       <Stack.Screen name="BookRecord" component={BookRecord} />

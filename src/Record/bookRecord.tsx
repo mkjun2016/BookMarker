@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Alert, Image, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native"
+
 import { height, width } from '../../defaultSize';
 import { containsKey, getData, removeData, storeData } from '../../AsyncService';
 
@@ -12,8 +13,6 @@ const formatteddDate2 = `${today.getFullYear()}.${today.getMonth() + 1 > 9 ? tod
 
 const BookRecord = ({ navigation, route }: any) => {
   const { title, image, author, publisher } = route.params;
-
-  const [textExist, setExist] = useState(false);
 
   const [selectedButton, setSelected] = useState({
     index: '',
@@ -161,7 +160,6 @@ const BookRecord = ({ navigation, route }: any) => {
       }}
         value={text}
         onChangeText={setText}
-        onSubmitEditing={() => setExist(true)}
         inputMode='text'
         multiline={true} />
     </View>
