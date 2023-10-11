@@ -4,6 +4,7 @@ import axios from 'axios';
 import { ActivityIndicator, FlatList, Image, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { height, width } from '../../defaultSize';
 import { containsKey, removeData, storeData } from '../../AsyncService';
+import BookRecord from '../Record/bookRecord';
 
 export const getBookData = async (text: string) => {
   const clientId = `qO6ng3fS5wE3VrhWt4LS`
@@ -15,7 +16,6 @@ export const getBookData = async (text: string) => {
       "X-Naver-Client-Secret": clientSecret,
     },
   }).then((response) => {
-    console.log(response.data.items);
     return response.data.items;
   }).catch((error) => {
     console.log(error);
@@ -120,7 +120,12 @@ const Search2 = ({ route, navigation }: any) => {
       <FlatList
         data={loadData}
         renderItem={({ item }) =>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("BookRecord", {
+            title: item.title,
+            image: item.image,
+            publisher: item.publisher,
+            author: item.author,
+          })}>
             <Item title={item.title} image={item.image} publisher={item.publisher} author={item.author} />
           </TouchableOpacity>}
         onEndReached={onEndReached}

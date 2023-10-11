@@ -96,7 +96,7 @@ const Search1 = ({ navigation }: any) => {
               paddingBottom: width * 19,
               flexDirection: "row",
             }}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.navigate("Search2", { text: item })}>
                 <Text style={{
                   fontSize: width * 12,
                   fontStyle: "normal",

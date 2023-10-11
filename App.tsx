@@ -15,19 +15,21 @@ import Search1 from './src/Search/search1';
 import Search2 from './src/Search/search2';
 import Settings from './src/Home/setting';
 import BookRecord from './src/Record/bookRecord';
+import BookList from './src/Record/bookList';
 
 const Stack = createStackNavigator();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName='BookRecord'
+    <Stack.Navigator initialRouteName='Search1'
       screenOptions={{
         headerShown: false,
       }}>
-      <Stack.Screen name="BookRecord" component={BookRecord} />
-      <Stack.Screen name="Settings" component={Settings} />
       <Stack.Screen name="Search1" component={Search1} />
       <Stack.Screen name="Search2" component={Search2} />
+      <Stack.Screen name="BookRecord" component={BookRecord} />
+      <Stack.Screen name="BookList" component={BookList} />
+      <Stack.Screen name="Settings" component={Settings} />
     </Stack.Navigator>
   );
 }
