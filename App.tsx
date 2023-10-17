@@ -17,15 +17,25 @@ import Settings from './src/Home/setting';
 import BookRecord from './src/Record/bookRecord';
 import BookList from './src/Record/bookList';
 import SuggestBook from './src/Home/suggestBook';
+import AiSuggest from './src/Home/Suggest/aiSuggest';
+import SetInterest from './src/Home/Suggest/setInterest';
+import SetInterest2 from './src/Home/Suggest/setInterest2';
+import SetInterest3 from './src/Home/Suggest/setInterest3';
+import SetInterest4 from './src/Home/Suggest/setInterest4';
 
 const Stack = createStackNavigator();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName='SuggestBook'
+    <Stack.Navigator initialRouteName='SetInterest'
       screenOptions={{
         headerShown: false,
       }}>
+      <Stack.Screen name="SetInterest" component={SetInterest} />
+      <Stack.Screen name="SetInterest2" component={SetInterest2} />
+      <Stack.Screen name="SetInterest3" component={SetInterest3} />
+      <Stack.Screen name="SetInterest4" component={SetInterest4} />
+      <Stack.Screen name="AiSuggest" component={AiSuggest} />
       <Stack.Screen name="SuggestBook" component={SuggestBook} />
       <Stack.Screen name="Search1" component={Search1} />
       <Stack.Screen name="Search2" component={Search2} />
