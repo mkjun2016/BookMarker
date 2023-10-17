@@ -22,6 +22,7 @@ import SetInterest from './src/Home/Suggest/setInterest';
 import SetInterest2 from './src/Home/Suggest/setInterest2';
 import SetInterest3 from './src/Home/Suggest/setInterest3';
 import SetInterest4 from './src/Home/Suggest/setInterest4';
+import SuggestList from './src/Home/Suggest/suggestList';
 
 const Stack = createStackNavigator();
 
@@ -35,6 +36,7 @@ const StackNavigator = () => {
       <Stack.Screen name="SetInterest2" component={SetInterest2} />
       <Stack.Screen name="SetInterest3" component={SetInterest3} />
       <Stack.Screen name="SetInterest4" component={SetInterest4} />
+      <Stack.Screen name="SuggestList" component={SuggestList} />
       <Stack.Screen name="AiSuggest" component={AiSuggest} />
       <Stack.Screen name="SuggestBook" component={SuggestBook} />
       <Stack.Screen name="Search1" component={Search1} />

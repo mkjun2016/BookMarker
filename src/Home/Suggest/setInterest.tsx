@@ -6,7 +6,10 @@ import { height, width } from '../../../defaultSize';
 import LinearGradient from 'react-native-linear-gradient';
 
 const SetInterest = ({ navigation }: any) => {
-  const [chosenBtn, setChosen] = useState<any>([]);
+  const [chosenBtn1, setChosen1] = useState(false);
+  const [chosenBtn2, setChosen2] = useState(false);
+  const [chosenBtn3, setChosen3] = useState(false);
+  const [chosenBtn4, setChosen4] = useState(false);
 
   return (
     <View style={{
@@ -80,10 +83,10 @@ const SetInterest = ({ navigation }: any) => {
             flexDirection: "row",
             gap: width * 23,
           }}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => chosenBtn1 ? setChosen1(false) : setChosen1(true)}>
               <Image source={require('../../../assets/btn1_1.png')} width={width * 150} height={width * 150} />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => chosenBtn2 ? setChosen2(false) : setChosen2(true)}>
               <Image source={require('../../../assets/btn1_2.png')} width={width * 150} height={width * 150} />
             </TouchableOpacity>
           </View>
@@ -91,10 +94,10 @@ const SetInterest = ({ navigation }: any) => {
             flexDirection: "row",
             gap: width * 23,
           }}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => chosenBtn3 ? setChosen3(false) : setChosen3(true)}>
               <Image source={require('../../../assets/btn1_3.png')} width={width * 150} height={width * 150} />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => chosenBtn4 ? setChosen4(false) : setChosen4(true)}>
               <Image source={require('../../../assets/btn1_4.png')} width={width * 150} height={width * 150} />
             </TouchableOpacity>
           </View>
@@ -103,7 +106,12 @@ const SetInterest = ({ navigation }: any) => {
           alignItems: "center",
         }}>
           <TouchableOpacity onPress={() => navigation.navigate("SetInterest2", {
-            chosenBtn: []
+            chosenBtn: {
+              chosenBtn1: chosenBtn1,
+              chosenBtn2: chosenBtn2,
+              chosenBtn3: chosenBtn3,
+              chosenBtn4: chosenBtn4,
+            }
           })}>
             <Image source={require('../../../assets/btn_next.png')} width={width * 226} height={width * 41} />
           </TouchableOpacity>
