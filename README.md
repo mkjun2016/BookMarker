@@ -72,7 +72,7 @@ KevinComp 라이센스를 준수하며 ``LICENSE``에서 자세한 정보를 확
 
 ## 기여 방법
 
-1. (<https://github.com/yourname/yourproject/fork>)을 포크합니다.
+1. (<https://github.com/mkjun2016/BookMarker/fork>)을 포크합니다.
 2. 새로운 브랜치를 생성하고 개발합니다.
 3. 변경 사항을 커밋한 후 풀 리퀘스트(PR)를 보내주세요.
 
