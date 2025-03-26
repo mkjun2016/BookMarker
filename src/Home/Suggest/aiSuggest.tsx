@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, Image, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export const testTurbo = (question: string) => {
-  const OPENAI_KEY = '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'
+  const OPENAI_KEY = '******'
 
 
   const data = JSON.stringify({
