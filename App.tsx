@@ -28,7 +28,7 @@ const Stack = createStackNavigator();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName='SetInterest'
+    <Stack.Navigator initialRouteName='SuggestBook'
       screenOptions={{
         headerShown: false,
       }}>

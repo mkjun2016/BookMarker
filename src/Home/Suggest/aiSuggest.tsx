@@ -5,7 +5,6 @@ import { ActivityIndicator, FlatList, Image, SafeAreaView, StyleSheet, Text, Tex
 export const testTurbo = (question: string) => {
   const OPENAI_KEY = '******'
 
-
   const data = JSON.stringify({
     "model": "gpt-3.5-turbo",
     "messages": [
