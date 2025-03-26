@@ -11,7 +11,9 @@ const SetInterest4 = ({ navigation, route }: any) => {
   const { chosenBtn_2 } = route.params;
   const { chosenBtn_3 } = route.params;
 
-  const [answer, setAnswer] = useState<any>('');
+  const [answer, setAnswer] = useState<any>({
+    answer: '',
+  });
   const [finalResult, setFinal] = useState<any>('')
 
   const convert1 = () => {
@@ -71,10 +73,15 @@ const SetInterest4 = ({ navigation, route }: any) => {
   const callAi = async () => {
     const result = convert1() + convert2() + convert3();
     console.log(result);
-    setAnswer(await testTurbo(`${result} 와 관련된 책 10권을 json 으로 title, author, genre를 포함해서 딱 array 로만 정리해서 추천해줘. 다른 속성은 안돼. 예시를 들자면, 
-    [{"title": "홍련", "author": "정유정", "genre": "장르소설"}] 처럼 정리해줘.`));
-    console.log(answer.choices[0].message.content);
-    setFinal(answer.choices[0].message.content);
+    if (answer.answer != '') {
+      console.log(answer.answer.choices[0].message.content);
+      setFinal(answer.answer.choices[0].message.content);
+    } else {
+      setAnswer({
+        answer: await testTurbo(`${result} 와 관련된 책 10권을 json 으로 title, author, genre를 포함해서 딱 array 로만 정리해서 추천해줘. 다른 속성은 안돼. 예시를 들자면, 
+    [{"title": "홍련", "author": "정유정", "genre": "장르소설"}] 처럼 정리해줘.`),
+      });
+    }
   }
 
   return (

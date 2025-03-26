@@ -21,7 +21,10 @@ export const testTurbo = (question: string) => {
       'Authorization': 'Bearer ' + OPENAI_KEY,
     },
     body: data,
-  }).then(response => response.json());
+  }).then(response => {
+    response.json()
+    console.log(response);
+  });
 }
 
 const AiSuggest = () => {
